@@ -9,11 +9,13 @@ class TensorFlowService {
     hello: { text: "Hi there! How can I help you?" },
     "how are you": { text: "I'm doing well, thank you for asking. How about you?" },
     "what is your name": { text: "I'm an AI assistant created to help answer questions." },
-    "kupal ka ba?": { text: "mas kupal ka bossing", image: malupiton },
-    kupal: { text: "kupal ka rin boss", image: malupiton },
+    "kupal ka ba?": { text: "mas kupal ka bossing😝", image: malupiton },
+    kupal: { text: "kupal ka rin boss😝", image: malupiton },
     "tangina ka": { text: "tangina mo ka, inaano ba kita kupal ka?", image: galitMalupiton },
     tangina: { text: "tangina mo rin boss", image: galitMalupiton },
     gago: { text: "gago ka rin boss", image: galitMalupiton },
+    "boss boss": { text: "kumusta ang buhay buhay bossing? mukha ka paring burat bossing😝" },
+    "bading ka": { text: "mas bading ka tanga, mukha ka pang burat" },
     // Add more predefined responses here
   };
 
