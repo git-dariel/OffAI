@@ -1,50 +1,40 @@
-# React + TypeScript + Vite
+# 🎭 Ang Pinaka-Astig na AI Chat App sa Balat ng Lupa! 🚀
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Ano ba 'to?
 
-Currently, two official plugins are available:
+Uy, pre! Welcome sa pinaka-cool na AI chat app na ginawa ng mga taong walang tulog! 😎 Ito ang lugar kung saan pwede kang makipag-usap sa isang robot na mas matalino pa sa ex mo! (Charot lang, wag mo na i-compare)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Bakit mo 'to kailangan?
 
-## Expanding the ESLint configuration
+- Wala ka nang friends? No prob! AI na ang new barkada mo! 🤖👯‍♂️
+- Gusto mo ng kasagutan sa meaning of life? Baka sakaling alam ng AI! (Pero 'wag umasa masyado, ha?)
+- Bored ka sa work? Chat ka dito, kunwari nagco-code ka! 💻🤫
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Paano gamitin?
 
-- Configure the top-level `parserOptions` property like this:
+1. I-install mo muna, 'wag kalimutan! (`npm install` o `yarn install`, ikaw bahala)
+2. I-run mo na! (`npm start` o `yarn start`, depende sa mood mo)
+3. Mag-type ka ng message, tapos send!
+4. Maghintay ng sagot... Kunwari naglo-loading pa, pero baka nag-coffee break lang yung AI. ☕️
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Features na dapat ipagmalaki mo sa friends mo
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+- Super intelligent AI (mas matalino pa sa kapitbahay mong nagmamagaling)
+- Real-time chat (parang text lang, pero may utak yung kausap mo)
+- Responsive design (maganda tignan kahit naka-flip phone ka pa)d
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Paalala
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Tandaan mo, kahit gaano ka-astig ang AI na 'to, hindi pa rin siya papalit sa totoong tao. So 'wag mong iwan ang friends mo para lang makipag-chat dito, ha? Baka ma-ghost ka ng AI! 👻
+
+## Mga Pasasalamat
+
+Salamat sa lahat ng nag-contribute dito! Lalo na dun sa nagbigay ng idea na gumawa ng AI chat app habang lasing. Cheers! 🍻
+
+## License
+
+MIT License yata 'to, pero 'di ko na sure. Basta gamitin mo na lang, 'wag mo lang ibenta, ha? Mahiya ka naman! 😂
+
+---
+
+Gawa ng isang programmer na kulang sa tulog at sobra sa kape. ☕️💻😴
