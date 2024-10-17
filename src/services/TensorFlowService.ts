@@ -12,8 +12,8 @@ class TensorFlowService {
     "kupal ka ba?": { text: "mas kupal ka bossing", image: malupiton },
     kupal: { text: "kupal ka rin boss", image: malupiton },
     "tangina ka": { text: "tangina mo ka, inaano ba kita kupal ka?", image: galitMalupiton },
-    tangina: { text: "tangina mo rin boss", image: galitMalupiton},
-    gago: { text: "gago ka rin boss", image: galitMalupiton},
+    tangina: { text: "tangina mo rin boss", image: galitMalupiton },
+    gago: { text: "gago ka rin boss", image: galitMalupiton },
     // Add more predefined responses here
   };
 
@@ -38,7 +38,10 @@ class TensorFlowService {
     const maxSimilarity = similarities.max().dataSync()[0];
 
     if (maxSimilarity > 0.7) {
-      return this.responses[Object.keys(this.responses)[maxSimilarityIndex]];
+      const selectedResponseKey = Object.keys(this.responses)[maxSimilarityIndex];
+      const selectedResponse = this.responses[selectedResponseKey];
+
+      return selectedResponse;
     }
 
     return null;

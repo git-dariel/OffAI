@@ -20,7 +20,7 @@ const Message: React.FC<MessageType> = ({ content, isUser }) => {
     if (isUser) return typeof content === "string" ? content : content.text;
 
     const text = typeof content === "string" ? content : content.text;
-    const image = typeof content === "object" ? content.image : undefined;
+    const image = typeof content === "object" && content.image ? content.image : undefined;
 
     // Split the content into parts, separating code blocks from regular text
     const parts = text.split(/(```[\s\S]*?```)/);
@@ -58,14 +58,35 @@ const Message: React.FC<MessageType> = ({ content, isUser }) => {
           } else {
             // This is regular text
             return (
-              <div key={index} className="whitespace-pre-wrap">
-                {part}
+              <div key={index} className="whitespace-pre-wrap markdown-content">
+                {part.split("\n").map((line, lineIndex) => (
+                  <React.Fragment key={lineIndex}>
+                    {React.createElement("div", {
+                      dangerouslySetInnerHTML: {
+                        __html: line
+                          .replace(/<strong>(.*?)<\/strong>/g, "<strong>$1</strong>")
+                          .replace(/<code>(.*?)<\/code>/g, "<code>$1</code>")
+                          .replace(/\*(.*?)\*/g, "<strong>$1</strong>"),
+                      },
+                    })}
+                    {lineIndex < part.split("\n").length - 1 && <br />}
+                  </React.Fragment>
+                ))}
               </div>
             );
           }
         })}
         {image && (
-          <img src={image} alt="Response" className="mt-2 max-w-full h-40 md:h-80 rounded-md" />
+          <img
+            src={image}
+            alt="Response"
+            className="mt-2 max-w-full h-auto object-contain rounded-md"
+            style={{ maxHeight: "80vh" }}
+            onError={(e) => {
+              console.error("Error loading image:", image);
+              e.currentTarget.style.display = "none";
+            }}
+          />
         )}
         <Toaster position="top-right" expand={true} richColors />
       </>
@@ -78,14 +99,14 @@ const Message: React.FC<MessageType> = ({ content, isUser }) => {
     <div className={`flex ${isUser ? "justify-end" : "justify-start"} mb-4`}>
       <div className={`flex items-start ${isUser ? "flex-row-reverse" : "flex-row"}`}>
         <div
-          className={`w-8 h-8 rounded-full flex items-center justify-center ${
-            isUser ? "bg-pink-500 text-white ml-3" : "bg-gray-500 text-white mr-3"
+          className={`w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center ${
+            isUser ? "bg-pink-500 text-white ml-2 md:ml-3" : "bg-gray-500 text-white mr-2 md:mr-3"
           }`}
         >
           {isUser ? "U" : "K"}
         </div>
         <div
-          className={`max-w-3xl md:text-base rounded-lg px-4 py-2 ${
+          className={`max-w-[85%] md:max-w-3xl text-sm md:text-base rounded-lg px-3 py-2 md:px-4 md:py-2 ${
             isUser ? "bg-gray-500 text-white" : "bg-white text-gray-800"
           }`}
         >
@@ -93,10 +114,10 @@ const Message: React.FC<MessageType> = ({ content, isUser }) => {
             {formatContent(content)}
             {!isUser && (
               <button
-                className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity"
+                className="absolute bottom-1 right-1 md:bottom-2 md:right-2 opacity-0 group-hover:opacity-100 transition-opacity"
                 onClick={() => copyToClipboard(fullContent)}
               >
-                <Copy size={16} />
+                <Copy size={14} className="md:w-4 md:h-4" />
               </button>
             )}
           </div>
