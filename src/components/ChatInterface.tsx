@@ -22,13 +22,13 @@ const ChatInterface: React.FC = () => {
   };
 
   return (
-    <div className="chat-interface flex flex-col h-screen bg-gray-100">
-      <div className="bg-gradient-to-r from-gray-300 to-gray shadow-lg p-4 md:p-6">
-        <h1 className="text-lg md:text-2xl font-bold text-center text-gray-600 tracking-wide">
-          Your <span className="text-gray-700">Kupal AI</span> Companion
+    <div className="chat-interface flex flex-col h-screen bg-[#212121]">
+      <div className="bg-gradient-to-r from-gray-[#212121] to-black shadow-lg p-4 md:p-6">
+        <h1 className="text-lg md:text-2xl font-bold text-center text-gray-400 tracking-wide">
+          Your <span className="text-gray-500">Kupal AI</span> Companion
         </h1>
       </div>
-      <div className="message-list flex-1 md:mb-14 overflow-y-auto p-3 md:p-4 space-y-3 md:space-y-4 pb-20 bg-white bg-opacity-50 backdrop-filter backdrop-blur-sm">
+      <div className="message-list flex-1 md:mb-14 overflow-y-auto p-3 md:p-4 space-y-3 md:space-y-4 pb-20 ">
         {messages.length === 0 ? (
           <div className="flex flex-col items-center justify-center h-full space-y-4">
             <img
@@ -64,16 +64,16 @@ const ChatInterface: React.FC = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="fixed bottom-0 left-0 right-0 pb-3 md:pb-5 bg-white bg-opacity-50 backdrop-filter backdrop-blur-sm"
+        className="fixed bottom-0 left-0 right-0 pb-3 md:pb-5 bg-[#212121]"
       >
-        <div className="flex space-x-2 max-w-4xl mx-auto p-1 md:p-2 bg-white bg-opacity-70 backdrop-blur-sm border border-gray-200 rounded-full shadow-lg">
+        <div className="flex space-x-2 max-w-4xl mx-auto p-1 md:p-2 bg-[#252525] bg-opacity-70 backdrop-blur-sm rounded-full shadow-lg">
           <input
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Message Kupal"
             disabled={isLoading}
-            className="flex-1 px-3 md:px-4 py-2 text-sm md:text-base rounded-md focus:outline-none focus:ring-2 focus:ring-white bg-transparent"
+            className="flex-1 px-3 md:px-4 py-2 text-sm md:text-base rounded-md focus:outline-none focus:ring-2 focus:ring-[#252525] bg-transparent text-gray-100"
           />
           <button
             type="submit"

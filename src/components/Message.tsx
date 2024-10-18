@@ -59,7 +59,7 @@ const Message: React.FC<MessageType> = ({ content, isUser }) => {
             // This is regular text
             return (
               <div key={index} className="whitespace-pre-wrap markdown-content">
-                {part.split("\n").map((line, lineIndex) => (
+                {part.split("/n").map((line, lineIndex) => (
                   <React.Fragment key={lineIndex}>
                     {React.createElement("div", {
                       dangerouslySetInnerHTML: {
@@ -88,7 +88,7 @@ const Message: React.FC<MessageType> = ({ content, isUser }) => {
             }}
           />
         )}
-        <Toaster position="top-right" expand={true} richColors />
+        <Toaster position="bottom-right" expand={true} richColors />
       </>
     );
   };
@@ -107,7 +107,7 @@ const Message: React.FC<MessageType> = ({ content, isUser }) => {
         </div>
         <div
           className={`max-w-[85%] md:max-w-3xl text-sm md:text-base rounded-lg px-3 py-2 md:px-4 md:py-2 ${
-            isUser ? "bg-gray-500 text-white" : "bg-white text-gray-800"
+            isUser ? "bg-gray-500 text-white" : "bg-gray-700 text-gray-200"
           }`}
         >
           <div className="text-xs md:text-sm markdown-content relative group">
